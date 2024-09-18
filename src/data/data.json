@@ -1,0 +1,212 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Burgers",
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726566844/c5efb8125141031.6112e18a95423_btdkxu.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Noodles",
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726567416/vintage-japanese-food-poster-with-ramen-illustration-chinese-food-noodle-free-vector_h4o6hp.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Vietnamese Cuisine",
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726592567/Screenshot_2024-09-18_at_00.02.35_cayl6f.png"
+    },
+    {
+      "id": 4,
+      "name": "Seafood",
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726567533/stock-vector-seafood-restaurant-menu-realistic-poster-with-shrimp-squid-mussels-fresh-herbs-spices-marine-1266592801_vmhnud.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Cakes",
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726567781/street-food-festival-advertisement-poster-of-fastfood-burgers-sandwiches-or-snacks-and-dessert-meals-vector-design-of-donut-coffee-or-soda-drink-an-2EHNRD5_zhmmni.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Chicken Dishes",
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726567834/chicken-food-menu-ads-design-template-a4fa7801e6b037efb409bc2ed671d9d7_screen_k46te8.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726592700/Screenshot_2024-09-18_at_00.04.50_rudyee.png",
+      "title": "Cheeseburger",
+      "price": 49.99,
+      "description": "A classic beef cheeseburger with lettuce, tomatoes, cheese, and our special sauce. Perfect for a quick meal!"
+    },
+    {
+      "id": 2,
+      "categoryId": 5,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726554831/327265918_1537141406779854_5319246903894973824_n.0_fknhab.jpg",
+      "title": "Bánh Cuốn",
+      "price": 39.99,
+      "description": "A traditional dish made with rice flour, served with herbs and savory toppings for a light, flavorful bite."
+    },
+    {
+      "id": 3,
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726592964/Screenshot_2024-09-18_at_00.09.13_n0qqsk.png",
+      "title": "Sesame Eggplant Stir-Fry",
+      "price": 29.99,
+      "description": "Tasty stir-fried noodles with tender eggplant and sesame for a perfect vegetarian dish."
+    },
+    {
+      "id": 4,
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726593282/Screenshot_2024-09-18_at_00.14.32_jg6rus.png",
+      "title": "Mediterranean Salmon Plate",
+      "price": 99.99,
+      "description": "Grilled salmon served with quinoa, fresh vegetables, and a tangy dressing for a healthy, satisfying meal."
+    },
+    {
+      "id": 5,
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726555339/pho-1200x1478_kscotf.jpg",
+      "title": "Vietnamese Pho",
+      "price": 59.99,
+      "description": "A fragrant Vietnamese soup with tender beef slices, rice noodles, and aromatic herbs."
+    },
+    {
+      "id": 6,
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726555403/bun-bo-hue-6-0935_vhikql.jpg",
+      "title": "Bún Bò Huế",
+      "price": 149.99,
+      "description": "A flavorful dish from Hue, featuring spicy broth, noodles, and slices of beef and pork."
+    },
+    {
+      "id": 7,
+      "categoryId": 6,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726555454/roast_chicken_for_one_41998_16x9_uwnevl.jpg",
+      "title": "Grilled Chicken with Veggies",
+      "price": 79.99,
+      "description": "Juicy grilled chicken with crispy skin, served with a side of vegetables for a wholesome meal."
+    },
+    {
+      "id": 8,
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726592787/Screenshot_2024-09-18_at_00.06.18_cnhdzs.png",
+      "title": "Double Patty Burger",
+      "price": 49.99,
+      "description": "A beef burger with double patties, lettuce, tomatoes, cheese, and our special sauce. Ideal for a bigger bite!"
+    },
+    {
+      "id": 9,
+      "categoryId": 5,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726593377/Screenshot_2024-09-18_at_00.16.07_bz7dsi.png",
+      "title": "Bánh Bèo",
+      "price": 39.99,
+      "description": "Steamed rice cakes topped with shrimp and herbs, offering a light and flavorful taste."
+    },
+    {
+      "id": 10,
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726593033/Screenshot_2024-09-18_at_00.10.22_ca6awg.png",
+      "title": "Veggie Noodles",
+      "price": 129.99,
+      "description": "Simple yet delicious noodles with fresh vegetables and a savory sauce."
+    },
+    {
+      "id": 11,
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726554831/greek-salmon-bowl-f681500cbe054bb1adb607ff55094075_qxoacc.jpg",
+      "title": "Salmon Quinoa Bowl",
+      "price": 19.99,
+      "description": "Grilled salmon paired with quinoa and fresh greens, finished with a citrus dressing for a healthy meal."
+    },
+    {
+      "id": 12,
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726555339/pho-1200x1478_kscotf.jpg",
+      "title": "Beef Pho",
+      "price": 69.99,
+      "description": "A fragrant Vietnamese soup with tender beef slices, rice noodles, and aromatic herbs."
+    },
+    {
+      "id": 13,
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726555403/bun-bo-hue-6-0935_vhikql.jpg",
+      "title": "Bún Huế",
+      "price": 29.99,
+      "description": "A flavorful dish from Hue, featuring spicy broth, noodles, and slices of beef and pork."
+    },
+    {
+      "id": 14,
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726554831/AR-72657-best-hamburger-ever-ddmfs-4x3-hero-878e801ab30445988d007461782b3c25_ncxufp.jpg",
+      "title": "Classic Beef Burger",
+      "price": 59.99,
+      "description": "A beef burger with lettuce, tomatoes, cheese, and our special sauce. Perfect for a quick meal!"
+    },
+    {
+      "id": 16,
+      "categoryId": 5,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726593444/Screenshot_2024-09-18_at_00.17.13_nft0th.png",
+      "title": "Bánh Nậm",
+      "price": 89.99,
+      "description": "A traditional steamed rice cake served with savory toppings and herbs, perfect for a light meal."
+    },
+    {
+      "id": 17,
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726554831/Aubergine-and-sesame-noodles-6138de6_dpulpf.jpg",
+      "title": "Stir-Fry Veggie Noodles",
+      "price": 34.99,
+      "description": "Savory noodles stir-fried with fresh vegetables and topped with a flavorful sauce."
+    },
+    {
+      "id": 15,
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726592869/Screenshot_2024-09-18_at_00.07.39_zxyy6a.png",
+      "title": "Classic Burger",
+      "price": 49.99,
+      "description": "A classic beef burger with lettuce, tomatoes, cheese, and our special sauce. Perfect for a quick meal!"
+    },
+    {
+      "id": 18,
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726555403/bun-bo-hue-6-0935_vhikql.jpg",
+      "title": "Spicy Hue Noodles",
+      "price": 29.99,
+      "description": "A flavorful dish from Hue, featuring spicy broth, noodles, and slices of beef and pork."
+    },
+    {
+      "id": 19,
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726593134/Screenshot_2024-09-18_at_00.12.04_bghlvm.png",
+      "title": "Vegetable Tacos",
+      "price": 25.99,
+      "description": "Crispy corn tortillas filled with seasoned vegetables, topped with salsa and guacamole for a delicious vegetarian option."
+    },
+    {
+      "id": 20,
+      "categoryId": 6,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726593635/Screenshot_2024-09-18_at_00.20.25_dfswwf.png",
+      "title": "Herb Grilled Chicken Thighs",
+      "price": 49.99,
+      "description": "Succulent grilled chicken thighs marinated in a blend of herbs and spices, served with a side of roasted vegetables."
+    },
+    {
+      "id": 21,
+      "categoryId": 5,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726593516/Screenshot_2024-09-18_at_00.18.26_ooo2e8.png",
+      "title": "Gỏi Cuốn (Fresh Spring Rolls)",
+      "price": 39.99,
+      "description": "Refreshing Vietnamese fresh spring rolls made with shrimp, herbs, and rice paper, served with a tangy dipping sauce."
+    },
+    {
+      "id": 22,
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/da2j53n0s/image/upload/v1726554831/grilled-salmon-w-quinoa_o2vgqt.jpg",
+      "title": "Lemon Garlic Grilled Salmon",
+      "price": 89.99,
+      "description": "Grilled salmon fillet seasoned with lemon and garlic, served on a bed of quinoa and steamed broccoli for a light yet filling meal."
+    }
+  ]
+}

@@ -1,118 +1,221 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import {View, Text, Image} from 'react-native';
+import React, {useContext} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import HomeScreen from './src/screen/HomeScreen';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Entypo from 'react-native-vector-icons/dist/Entypo';
+import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
+import CartScreen from './src/screen/CartScreen';
+import FavoriteScreen from './src/screen/FavoriteScreen';
+import AccountScreen from './src/screen/AccountScreen';
+import ProductListScreen from './src/screen/ProductListScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {CartContext, CartProvider} from './src/context/CartContext';
+import {FavoriteProvider} from './src/context/FavoriteContext';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+// const MyHomeStack = () => {
+//   return (
+//     <Stack.Navigator
+//       screenOptions={{
+//         headerShown: false,
+//       }}>
+//       <Stack.Screen name="HOME" component={HomeScreen} />
+//       <Stack.Screen name="PRODUCT_DETAILS" component={ProductDetailsScreen} />
+//     </Stack.Navigator>
+//   );
+// };
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const MyHomeStack = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="HOME" component={HomeScreen} />
+      <Stack.Screen name="ProductList" component={ProductListScreen} />
+      <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
+    </Stack.Navigator>
   );
-}
+};
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const App = () => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <CartProvider>
+        <FavoriteProvider>
+          <Tab.Navigator
+            screenOptions={{
+              headerShown: false,
+              tabBarShowLabel: false,
+            }}>
+            <Tab.Screen
+              name="HOME_STACK"
+              component={MyHomeStack}
+              options={{
+                tabBarIcon: ({focused, size}) => {
+                  if (focused) {
+                    return (
+                      <Image
+                        source={require('./src/assets/focused/home.png')}
+                        style={{
+                          height: size,
+                          width: size,
+                          resizeMode: 'center',
+                        }}
+                      />
+                    );
+                  } else {
+                    return (
+                      <Image
+                        source={require('./src/assets/normal/home.png')}
+                        style={{
+                          height: size,
+                          width: size,
+                          resizeMode: 'center',
+                        }}
+                      />
+                    );
+                  }
+                },
+              }}
+            />
+            <Tab.Screen
+              name="REORDER"
+              component={FavoriteScreen}
+              options={{
+                tabBarIcon: ({focused, size}) => {
+                  if (focused) {
+                    return (
+                      <Image
+                        source={require('./src/assets/focused/reorder.png')}
+                        style={{
+                          height: size,
+                          width: size,
+                          resizeMode: 'center',
+                        }}
+                      />
+                    );
+                  } else {
+                    return (
+                      <Image
+                        source={require('./src/assets/normal/reorder.png')}
+                        style={{
+                          height: size,
+                          width: size,
+                          resizeMode: 'center',
+                        }}
+                      />
+                    );
+                  }
+                },
+              }}
+            />
+            <Tab.Screen
+              name="CART"
+              component={CartScreen}
+              options={{
+                tabBarIcon: ({focused, size}) => {
+                  const {cartItems} = useContext(CartContext);
+                  if (focused) {
+                    return (
+                      <View style={{position: 'relative'}}>
+                        <Image
+                          source={require('./src/assets/focused/shopping_cart.png')}
+                          style={{
+                            height: size,
+                            width: size,
+                            resizeMode: 'center',
+                          }}
+                        />
+                        <View
+                          style={{
+                            position: 'absolute',
+                            right: -3,
+                            bottom: 22,
+                            height: 14,
+                            width: 14,
+                            backgroundColor: '#E96E6E',
+                            borderRadius: 7,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                          }}>
+                          <Text style={{color: 'white', fontSize: 10}}>
+                            {cartItems.length}
+                          </Text>
+                        </View>
+                      </View>
+                    );
+                  } else {
+                    return (
+                      <View style={{position: 'relative'}}>
+                        <Image
+                          source={require('./src/assets/normal/shopping_cart.png')}
+                          style={{
+                            height: size,
+                            width: size,
+                            resizeMode: 'center',
+                          }}
+                        />
+                        <View
+                          style={{
+                            position: 'absolute',
+                            right: -3,
+                            bottom: 22,
+                            height: 14,
+                            width: 14,
+                            backgroundColor: '#C0C0C0',
+                            borderRadius: 7,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                          }}>
+                          <Text style={{color: 'white', fontSize: 10}}>
+                            {cartItems.length}
+                          </Text>
+                        </View>
+                      </View>
+                    );
+                  }
+                },
+              }}
+            />
+            <Tab.Screen
+              name="ACCOUNT"
+              component={AccountScreen}
+              options={{
+                tabBarIcon: ({focused, size}) => {
+                  if (focused) {
+                    return (
+                      <Image
+                        source={require('./src/assets/focused/account.png')}
+                        style={{
+                          height: size,
+                          width: size,
+                          resizeMode: 'center',
+                        }}
+                      />
+                    );
+                  } else {
+                    return (
+                      <Image
+                        source={require('./src/assets/normal/account.png')}
+                        style={{
+                          height: size,
+                          width: size,
+                          resizeMode: 'center',
+                        }}
+                      />
+                    );
+                  }
+                },
+              }}
+            />
+          </Tab.Navigator>
+        </FavoriteProvider>
+      </CartProvider>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;
